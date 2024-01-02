@@ -19,6 +19,9 @@
     <Filter Include="imgui\backends">
       <UniqueIdentifier>{4e1c62ca-bf67-4520-8959-9f4a3cedad63}</UniqueIdentifier>
     </Filter>
+    <Filter Include="implot">
+      <UniqueIdentifier>{b6be85ca-263d-41bd-ac0d-f63147f4aa87}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -44,6 +47,15 @@
     </ClCompile>
     <ClCompile Include="..\imgui\backends\imgui_impl_win32.cpp">
       <Filter>imgui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\implot\implot.cpp">
+      <Filter>implot</Filter>
+    </ClCompile>
+    <ClCompile Include="..\implot\implot_demo.cpp">
+      <Filter>implot</Filter>
+    </ClCompile>
+    <ClCompile Include="..\implot\implot_items.cpp">
+      <Filter>implot</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +85,12 @@
     </ClInclude>
     <ClInclude Include="..\imgui\backends\imgui_impl_win32.h">
       <Filter>imgui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="..\implot\implot.h">
+      <Filter>implot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\implot\implot_internal.h">
+      <Filter>implot</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

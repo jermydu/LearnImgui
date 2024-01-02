@@ -1,7 +1,7 @@
 #include "imgui.h"
 #include "imgui_impl_opengl3.h"
 #include "imgui_impl_win32.h"
-
+#include "implot.h"
 #include <windows.h>
 #include <GL/GL.h>
 
@@ -155,6 +155,9 @@ int main(int argc, char* argv[])
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;       // Docking
     io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;     // Multi-Viewport / Platform Windows
 
+    //implot 上下文
+    ImPlot::CreateContext();
+
     //设置窗口风格
     ImGui::StyleColorsDark();
 
@@ -214,8 +217,11 @@ int main(int argc, char* argv[])
             counter++;
         ImGui::Text("counter = %d", counter);
         
-       /* bool bShowDemoWindow = true;
-        ImGui::ShowDemoWindow(&bShowDemoWindow);*/
+        bool bShowDemoWindow = true;
+        ImGui::ShowDemoWindow(&bShowDemoWindow);
+
+        ImPlot::ShowDemoWindow(&bShowDemoWindow);
+        
         ImGui::End();
 
         //渲染
@@ -240,6 +246,7 @@ int main(int argc, char* argv[])
 
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplWin32_Shutdown();
+    ImPlot::DestroyContext();
     ImGui::DestroyContext();
 
     CleanupDeviceWGL(hWnd, &g_MainWindow);
